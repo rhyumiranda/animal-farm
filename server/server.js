@@ -4,6 +4,8 @@ import Chance from 'chance'
 
 const chance = new Chance();
 const app = express();
+app.use(cors());
+app.use(express.json());
 
 const animals = [...Array(250).keys()].map(id => {
   return {
@@ -27,5 +29,3 @@ app.listen(8080, () =>{
 });
 
 
-app.use(cors());
-app.use(express.json());
